@@ -1,123 +1,147 @@
 <!DOCTYPE html>
-<html lang="en-CA">
+<html lang="EN-CA">
 <head>
-<title>Exercise 7: Banh Mi, menus, and layout</title>
+  <!-- "Made by Noah Heide on October 22nd" -->
+  <meta charset="utf-8">
+<title>Exercise 6: Banh Mi, menus, and layout</title>
+<!-- This is embed code for Google fonts, take a look at  https://fonts.google.com/ for more info, you can just pick fonts and get an embed code which you use here. See how I am controlling them from <style> most of the CSS is just pasted in from Google and I have made tweaks to the weights and added other bits. This is what we will learn next week.-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
-
 <style>
+
   body {
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    width: 960px;
-    margin: 0 auto;
-  }
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 16px;
+  width: 950px;
+  margin: auto;
+  text-align: center;
+  }  
+  
+  ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
 
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: blue;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 16px;
+}
+  
+ul li a:hover {
+  background-color: #909CC2;
+}
+  
   h1 {
-    font-family: "Oswald", sans-serif;
-    font-weight: 500;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
   }
-
+  
+  #site-title {
+    font-size: 75px;
+  }
+  
   nav {
-    font-family: "Raleway", sans-serif;
-    margin-bottom: 20px;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   }
-
-  nav a:hover {
-    color: #d18f2c;
-  }
-
-  /* Navigation Bar */
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 30px;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: black;
-  }
-
-  /* ---- GRID SECTION ---- */
-  .sandwich-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns */
-    gap: 20px; /* space between grid items */
-    margin-top: 40px;
-  }
-
-  .sandwich-item {
-    background-color: #f8f8f8;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-  }
-
-  .sandwich-item img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  .sandwich-item h2 {
-    margin-top: 15px;
-  }
-
+  
   footer {
-    margin-top: 30px;
-    font-style: italic;
   }
+  
+
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: #90DDF0;
+  padding: 20px;
+  
+}
+  
+  .grid-item  {
+  background-color: #989788;
+  font-size: 15px;
+  text-align: center;
+  margin: 20px;
+    
+  }
+  
+  .grid-item p {
+    padding: 15px 20px;
+  }
+  
+ .footer-center {
+    text-align: center;
+    grid-column: 1 / -1;
+    background-color: #989788;
+    padding: 20px;
+    margin: 60px;
+    font-size: 20px;
+}
+  
+  img {
+    width: 100%;
+  }
+
+  
 </style>
 </head>
+<body><h1 id="site-title">Greg’s Banh Mi</h1>
+<nav>
+ <ul>
+<li><a href="/">Home</a></li>
+<li><a href="/">Menu</a></li>
+<li><a href="/">About</a></li>
+<li><a href="/">Contact</a></li>   
+</ul>
+</nav>
+<h1>At Greg's Banh Mi, we're serving up the perfect marriage of French and Vietnamese culinary traditions—crispy-on-the-outside, pillowy-on-the-inside baguettes loaded with bold, fresh flavorus that'll make your taste buds sing.</h1>
+  
+  <div class="container">
+  <div class="grid-item">
 
-<body>
-  <h1 id="site-title">Greg’s Banh Mi</h1>
-
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/">Menu</a></li>
-      <li><a href="/">About</a></li>
-      <li><a href="/">Contact</a></li>
-    </ul>
-  </nav>
-
-  <h1>At Greg's Banh Mi, we're serving up the perfect marriage of French and Vietnamese culinary traditions—crispy-on-the-outside, pillowy-on-the-inside baguettes loaded with bold, fresh flavours that'll make your taste buds sing.</h1>
-
-  <!-- Sandwich Grid -->
-  <div class="sandwich-grid">
-    <div class="sandwich-item">
-      <img src="banh-mi.jpg" alt="Classic Pork Banh Mi">
-      <h2>Classic Pork Banh Mi</h2>
-      <p>Tender marinated pork topped with crisp pickled vegetables, fresh cilantro, and a smear of pâté on a perfectly crusty baguette. A traditional favorite that balances savory, sweet, and tangy flavors in every bite.</p>
+  <img src="banh-mi.jpg" alt="sandwich with meat in it">
+    <h2>Classic Pork Banh Mi</h2>
+<p>Tender marinated pork topped with crisp pickled vegetables, fresh cilantro, and a smear of pâté on a perfectly crusty baguette. A traditional favorite that balances savory, sweet, and tangy flavors in every bite.</p>
     </div>
 
-    <div class="sandwich-item">
-      <img src="banh-mi.jpg" alt="Lemongrass Chicken Banh Mi">
-      <h2>Lemongrass Chicken Banh Mi</h2>
-      <p>Grilled chicken marinated in fragrant lemongrass and garlic, paired with cucumber, jalapeños, and our house mayo. Light yet satisfying, this sandwich brings bright, aromatic flavors that'll transport you straight to Saigon.</p>
+  <div class="grid-item">
+  <img src="banh-mi.jpg" alt="sandwich with meat in it">
+    <h2>Lemongrass Chicken Banh Mi</h2>
+<p>Grilled chicken marinated in fragrant lemongrass and garlic, paired with cucumber, jalapeños, and our house mayo. Light yet satisfying, this sandwich brings bright, aromatic flavors that'll transport you straight to Saigon.</p>
     </div>
-
-    <div class="sandwich-item">
-      <img src="banh-mi.jpg" alt="Tofu Banh Mi">
-      <h2>Tofu Banh Mi</h2>
-      <p>Crispy pan-fried tofu glazed in sweet soy sauce, layered with daikon, carrots, and fresh herbs for a vegetarian delight. Proof that plant-based can be just as bold and craveable as any meat-filled sandwich.</p>
+  <div class="grid-item">
+  <img src="banh-mi.jpg" alt="sandwich with meat in it">
+    <h2>Tofu Banh Mi</h2>
+<p>Crispy pan-fried tofu glazed in sweet soy sauce, layered with daikon, carrots, and fresh herbs for a vegetarian delight. Proof that plant-based can be just as bold and craveable as any meat-filled sandwich.</p>
     </div>
-
-    <div class="sandwich-item">
-      <img src="banh-mi.jpg" alt="Five-Spice Beef Banh Mi">
-      <h2>Five-Spice Beef Banh Mi</h2>
-      <p>Thinly sliced beef seared with aromatic five-spice blend and served with pickled vegetables and spicy Sriracha mayo. Rich, warming spices meet cool, crunchy toppings for an unforgettable flavor experience.</p>
+  <div class="grid-item">
+  <img src="banh-mi.jpg" alt="sandwich with meat in it">
+    <h2>Five-Spice Beef Banh Mi</h2>
+<p>Thinly sliced beef seared with aromatic five-spice blend and served with pickled vegetables and spicy Sriracha mayo. Rich, warming spices meet cool, crunchy toppings for an unforgettable flavor experience.</p>
     </div>
-  </div>
-
-  <footer>
-    Because life's too short for boring sandwiches. Greg's got you covered—one crispy baguette at a time.
-  </footer>
+    <footer class="footer-center">
+      Because life's too short for boring sandwiches. Greg's got you covered—one crispy baguette at a time.</footer>
+</div>
 </body>
 </html>
